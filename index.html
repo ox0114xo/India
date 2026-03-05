@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>印度 Apple ID 註冊 | 寶可夢低價課金指南</title>
+    <title>印度 Apple ID 註冊 | PokePay Pro 終極教學</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -13,7 +13,7 @@
                 extend: {
                     fontFamily: { sans: ['"Noto Sans TC"', 'sans-serif'] },
                     colors: {
-                        dark: { 900: '#0B0F19', 800: '#111827' },
+                        dark: { 900: '#0B0F19', 800: '#111827', 700: '#1F2937' },
                         brand: { cyan: '#06b6d4', blue: '#3b82f6', purple: '#8b5cf6' }
                     },
                     boxShadow: { 'neon': '0 0 20px rgba(59, 130, 246, 0.3)' }
@@ -29,81 +29,156 @@
             border: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.4s ease;
         }
-        .glass-card:hover { border-color: rgba(59, 130, 246, 0.4); transform: translateY(-5px); }
+        .glass-card:hover { border-color: rgba(59, 130, 246, 0.4); transform: translateY(-3px); }
         .gradient-text { background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        /* 自訂卷軸 */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B0F19; }
+        ::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4B5563; }
     </style>
 </head>
 <body class="antialiased selection:bg-brand-blue selection:text-white relative overflow-x-hidden">
-    <div class="fixed top-0 left-1/4 w-96 h-96 bg-brand-blue rounded-full mix-blend-multiply filter blur-[128px] opacity-20 pointer-events-none"></div>
+    <div class="fixed top-0 left-1/4 w-96 h-96 bg-brand-blue rounded-full mix-blend-multiply filter blur-[128px] opacity-20 pointer-events-none z-0"></div>
 
     <nav class="fixed w-full z-50 top-0 border-b border-white/10 bg-dark-900/80 backdrop-blur-md">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="font-bold text-xl tracking-wider flex items-center gap-3">
-                <i class="fa-brands fa-apple text-brand-cyan"></i> <span class="text-white">PokePay Guide</span>
+                <i class="fa-brands fa-apple text-brand-cyan"></i> <span class="text-white">PokePay Pro</span>
             </div>
             <div class="flex gap-4">
-                <a href="index.html" class="text-brand-cyan font-bold text-sm">1. Apple ID 註冊</a>
-                <a href="amazon.html" class="text-gray-400 hover:text-white transition-colors text-sm">2. 購買禮品卡</a>
+                <a href="index.html" class="text-brand-cyan font-bold text-sm">1. 註冊帳號</a>
+                <a href="amazon.html" class="text-gray-400 hover:text-white transition-colors text-sm">2. 購買點數</a>
             </div>
         </div>
     </nav>
 
     <header class="pt-32 pb-12 px-6 text-center relative z-10">
-        <h1 class="text-5xl md:text-6xl font-black tracking-tight mb-4">第一階段：<span class="gradient-text">印度帳號註冊</span></h1>
-        <p class="text-gray-400 text-lg">透過安卓系統完美避開蘋果防護網，五分鐘搞定印度商店帳號。</p>
+        <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-4">第一階段：<span class="gradient-text">印度帳號註冊</span></h1>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">我們將透過安卓設備的瀏覽器進行網頁端註冊，藉此完美繞過 Apple 針對 iOS 設備的異常註冊審查機制。請嚴格按照以下步驟操作。</p>
     </header>
 
     <main class="max-w-4xl mx-auto px-6 pb-20 relative z-10 space-y-8">
+        
         <div class="glass-card rounded-3xl p-8 md:p-10 w-full relative">
             <div class="absolute top-0 left-0 w-1 h-full bg-brand-blue rounded-l-3xl"></div>
-            <h2 class="text-2xl font-bold mb-4 text-white flex items-center gap-3">
-                <span class="bg-brand-blue/20 text-brand-cyan w-8 h-8 flex items-center justify-center rounded-full text-sm">1</span> 網頁端建立帳號 (關閉VPN)
+            <h2 class="text-2xl font-bold mb-6 text-white flex items-center gap-3">
+                <span class="bg-brand-blue/20 text-brand-cyan w-8 h-8 flex items-center justify-center rounded-full text-sm shrink-0">1</span> 
+                網頁端建立帳號
             </h2>
-            <div class="bg-amber-500/10 border border-amber-500/30 rounded-lg p-4 mb-4 text-amber-200 text-sm">
-                <i class="fa-solid fa-triangle-exclamation"></i> <strong>防 502 錯誤秘訣：</strong>請務必「關閉 VPN」使用一般網路註冊。
+            
+            <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-5 mb-6">
+                <h3 class="text-amber-400 font-bold mb-2 flex items-center gap-2"><i class="fa-solid fa-triangle-exclamation"></i> 嚴防 502 Bad Gateway 錯誤</h3>
+                <p class="text-amber-200/80 text-sm leading-relaxed">Apple 伺服器對常見 VPN IP 的封鎖極為嚴格。在此步驟中，請務必<strong>「關閉所有 VPN」</strong>，直接使用你原本的 4G/5G 或家用 Wi-Fi 網路進行註冊，否則網頁將無法正常載入。</p>
             </div>
-            <ul class="space-y-3 text-gray-300">
-                <li>• 前往蘋果官網：<a href="https://appleid.apple.com/" target="_blank" class="text-brand-blue hover:underline">appleid.apple.com</a></li>
-                <li>• 點擊建立帳號，國家/地區 <strong>務必選擇「印度 (India)」</strong>。</li>
-                <li>• 手機號碼請填寫 <strong>台灣 (+886)</strong> 的真實門號接收驗證碼。</li>
+
+            <ul class="space-y-4 text-gray-300">
+                <li class="flex gap-3"><i class="fa-solid fa-arrow-right text-brand-cyan mt-1"></i> <div>開啟瀏覽器的「無痕模式」，前往官方入口：<a href="https://appleid.apple.com/" target="_blank" class="text-brand-blue hover:text-brand-cyan underline transition">appleid.apple.com</a></div></li>
+                <li class="flex gap-3"><i class="fa-solid fa-arrow-right text-brand-cyan mt-1"></i> <div>點擊「建立您的 Apple ID」。在基本資料的<strong>國家/地區</strong>欄位，務必手動下拉選擇<strong>「印度 (India)」</strong>。</div></li>
+                <li class="flex gap-3"><i class="fa-solid fa-arrow-right text-brand-cyan mt-1"></i> <div>手機號碼驗證部分，國家代碼請選擇 <strong>台灣 (+886)</strong>，並填寫你的真實門號，依序完成 Email 與簡訊雙重認證即註冊成功。</div></li>
             </ul>
         </div>
 
         <div class="glass-card rounded-3xl p-8 md:p-10 w-full relative">
             <div class="absolute top-0 left-0 w-1 h-full bg-brand-purple rounded-l-3xl"></div>
-            <h2 class="text-2xl font-bold mb-4 text-white flex items-center gap-3">
-                <span class="bg-brand-purple/20 text-brand-purple w-8 h-8 flex items-center justify-center rounded-full text-sm">2</span> iPhone 登入與免綁卡設定
+            <h2 class="text-2xl font-bold mb-6 text-white flex items-center gap-3">
+                <span class="bg-brand-purple/20 text-brand-purple w-8 h-8 flex items-center justify-center rounded-full text-sm shrink-0">2</span> 
+                iPhone 登入與免綁卡設定
             </h2>
-            <ul class="space-y-3 text-gray-300 mb-6">
-                <li>• 打開 iPhone <strong>App Store</strong>，點擊大頭貼滑到底部「登出」。</li>
-                <li>• 輸入剛註冊好的印度 Apple ID 登入，並完成簡訊雙重認證。</li>
-                <li>• 首次登入需點擊「檢查 (Review)」帳號。付款方式務必勾選<strong>「無 (None)」</strong>。</li>
+            
+            <p class="text-gray-400 mb-6 leading-relaxed">帳號建立後，我們需要回到蘋果手機上進行商店區域切換與帳單地址的初始設定。<strong>請注意，這不會影響你手機原本的 iCloud 與照片備份。</strong></p>
+
+            <ul class="space-y-4 text-gray-300 mb-8">
+                <li class="flex gap-3"><i class="fa-solid fa-check text-green-500 mt-1"></i> <div>打開 iPhone 上的 <strong>App Store</strong>，點擊右上角大頭貼，滑到最底部點選「登出」。</div></li>
+                <li class="flex gap-3"><i class="fa-solid fa-check text-green-500 mt-1"></i> <div>滑回最上方，輸入剛剛註冊好的印度 Apple ID 與密碼進行登入，並接收台灣手機的認證簡訊。</div></li>
+                <li class="flex gap-3"><i class="fa-solid fa-check text-green-500 mt-1"></i> <div>首次登入會跳出彈窗，請點擊<strong>「檢查 (Review)」</strong>。在付款方式頁面，務必勾選<strong>「無 (None)」</strong>。</div></li>
             </ul>
-            <div class="bg-dark-900 border border-white/10 rounded-xl p-5 relative">
-                <p class="text-sm text-brand-cyan mb-2">帳單地址請一鍵複製下方印度真實地標：</p>
-                <button onclick="copyAppleAddress()" id="btn-apple-address" class="absolute top-4 right-4 text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-md transition-colors">複製地址</button>
-                <div class="text-xs font-mono text-gray-400">
-                    Street: Number One Mansingh Road<br>City: New Delhi<br>State: Delhi<br>Postcode: 110011<br>Phone: 1123026162
+
+            <div class="bg-dark-800 border border-white/10 rounded-2xl overflow-hidden">
+                <div class="bg-dark-700/50 px-5 py-3 border-b border-white/10 flex justify-between items-center">
+                    <span class="text-sm font-bold text-brand-cyan"><i class="fa-solid fa-location-dot mr-2"></i>帳單地址填寫指南</span>
+                    <span class="text-xs text-gray-500">點擊右側按鈕單獨複製欄位</span>
+                </div>
+                
+                <div class="divide-y divide-white/5">
+                    <div class="flex items-center justify-between p-4 hover:bg-white/5 transition">
+                        <div>
+                            <div class="text-xs text-gray-500 mb-1">街道地址 (Street)</div>
+                            <div class="font-mono text-white">Number One Mansingh Road</div>
+                        </div>
+                        <button onclick="copySingle('Number One Mansingh Road', this)" class="bg-white/10 hover:bg-white/20 text-gray-300 px-4 py-2 rounded-lg text-sm transition flex items-center gap-2">
+                            <i class="fa-regular fa-copy"></i> <span class="hidden sm:inline">複製</span>
+                        </button>
+                    </div>
+                    
+                    <div class="flex items-center justify-between p-4 hover:bg-white/5 transition">
+                        <div>
+                            <div class="text-xs text-gray-500 mb-1">城市 (City)</div>
+                            <div class="font-mono text-white">New Delhi</div>
+                        </div>
+                        <button onclick="copySingle('New Delhi', this)" class="bg-white/10 hover:bg-white/20 text-gray-300 px-4 py-2 rounded-lg text-sm transition flex items-center gap-2">
+                            <i class="fa-regular fa-copy"></i> <span class="hidden sm:inline">複製</span>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 hover:bg-white/5 transition">
+                        <div>
+                            <div class="text-xs text-gray-500 mb-1">邦 / 省份 (State)</div>
+                            <div class="font-mono text-white">Delhi</div>
+                        </div>
+                        <button onclick="copySingle('Delhi', this)" class="bg-white/10 hover:bg-white/20 text-gray-300 px-4 py-2 rounded-lg text-sm transition flex items-center gap-2">
+                            <i class="fa-regular fa-copy"></i> <span class="hidden sm:inline">複製</span>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 hover:bg-white/5 transition">
+                        <div>
+                            <div class="text-xs text-gray-500 mb-1">郵遞區號 (Postcode)</div>
+                            <div class="font-mono text-white">110011</div>
+                        </div>
+                        <button onclick="copySingle('110011', this)" class="bg-white/10 hover:bg-white/20 text-gray-300 px-4 py-2 rounded-lg text-sm transition flex items-center gap-2">
+                            <i class="fa-regular fa-copy"></i> <span class="hidden sm:inline">複製</span>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 hover:bg-white/5 transition">
+                        <div>
+                            <div class="text-xs text-gray-500 mb-1">電話號碼 (Phone)</div>
+                            <div class="font-mono text-white">1123026162</div>
+                        </div>
+                        <button onclick="copySingle('1123026162', this)" class="bg-white/10 hover:bg-white/20 text-gray-300 px-4 py-2 rounded-lg text-sm transition flex items-center gap-2">
+                            <i class="fa-regular fa-copy"></i> <span class="hidden sm:inline">複製</span>
+                        </button>
+                    </div>
                 </div>
             </div>
+            <p class="text-xs text-gray-500 mt-4"><i class="fa-solid fa-circle-info mr-1"></i> 以上為印度新德里知名飯店真實地址，可有效通過 Apple 系統初步驗證。</p>
         </div>
 
         <div class="text-center pt-8">
             <a href="amazon.html" class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-brand-blue to-brand-purple hover:from-brand-cyan hover:to-brand-blue text-white font-bold text-lg py-4 px-10 rounded-full transition-all shadow-neon hover:shadow-[0_0_40px_rgba(59,130,246,0.6)] transform hover:-translate-y-1">
-                帳號辦好了！前往購買禮品卡 <i class="fa-solid fa-arrow-right"></i>
+                帳號設定完成！前往購買禮物卡 <i class="fa-solid fa-arrow-right"></i>
             </a>
         </div>
     </main>
 
     <script>
-        function copyAppleAddress() {
-            navigator.clipboard.writeText(`Street: Number One Mansingh Road\nCity: New Delhi\nState: Delhi\nPostcode: 110011\nPhone: 1123026162`).then(() => {
-                const btn = document.getElementById('btn-apple-address');
-                btn.innerHTML = '已複製！'; btn.classList.add('text-green-400');
-                setTimeout(() => { btn.innerHTML = '複製地址'; btn.classList.remove('text-green-400'); }, 2000);
+        function copySingle(text, btnElement) {
+            navigator.clipboard.writeText(text).then(() => {
+                const originalHtml = btnElement.innerHTML;
+                btnElement.innerHTML = '<i class="fa-solid fa-check text-green-400"></i> <span class="hidden sm:inline text-green-400">已複製</span>';
+                btnElement.classList.replace('bg-white/10', 'bg-green-500/20');
+                btnElement.classList.replace('border-transparent', 'border-green-500/50');
+                
+                setTimeout(() => {
+                    btnElement.innerHTML = originalHtml;
+                    btnElement.classList.replace('bg-green-500/20', 'bg-white/10');
+                    btnElement.classList.replace('border-green-500/50', 'border-transparent');
+                }, 1500);
+            }).catch(err => {
+                alert('複製失敗，請手動選取');
             });
         }
     </script>
 </body>
 </html>
-
