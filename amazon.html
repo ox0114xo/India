@@ -13,7 +13,7 @@
                 extend: {
                     fontFamily: { sans: ['"Noto Sans TC"', 'sans-serif'] },
                     colors: {
-                        dark: { 900: '#0B0F19', 800: '#111827' },
+                        dark: { 900: '#0B0F19', 800: '#111827', 700: '#1F2937' },
                         brand: { cyan: '#06b6d4', blue: '#3b82f6', purple: '#8b5cf6' }
                     },
                     boxShadow: { 'neon': '0 0 20px rgba(59, 130, 246, 0.3)' }
@@ -27,70 +27,116 @@
             background: rgba(17, 24, 39, 0.6); backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.4s ease;
         }
-        .glass-card:hover { border-color: rgba(59, 130, 246, 0.4); transform: translateY(-5px); }
+        .glass-card:hover { border-color: rgba(59, 130, 246, 0.4); transform: translateY(-3px); }
         .gradient-text { background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B0F19; }
+        ::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4B5563; }
     </style>
 </head>
 <body class="antialiased selection:bg-brand-blue selection:text-white relative overflow-x-hidden">
-    <div class="fixed bottom-0 right-1/4 w-96 h-96 bg-brand-purple rounded-full mix-blend-multiply filter blur-[128px] opacity-20 pointer-events-none"></div>
+    <div class="fixed bottom-0 right-1/4 w-96 h-96 bg-brand-purple rounded-full mix-blend-multiply filter blur-[128px] opacity-20 pointer-events-none z-0"></div>
 
     <nav class="fixed w-full z-50 top-0 border-b border-white/10 bg-dark-900/80 backdrop-blur-md">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="font-bold text-xl tracking-wider flex items-center gap-3">
-                <i class="fa-brands fa-amazon text-brand-cyan"></i> <span class="text-white">PokePay Guide</span>
+                <i class="fa-brands fa-amazon text-brand-cyan"></i> <span class="text-white">PokePay Pro</span>
             </div>
             <div class="flex gap-4">
-                <a href="index.html" class="text-gray-400 hover:text-white transition-colors text-sm">1. Apple ID 註冊</a>
-                <a href="amazon.html" class="text-brand-cyan font-bold text-sm">2. 購買禮品卡</a>
+                <a href="index.html" class="text-gray-400 hover:text-white transition-colors text-sm">1. 註冊帳號</a>
+                <a href="amazon.html" class="text-brand-cyan font-bold text-sm">2. 購買點數</a>
             </div>
         </div>
     </nav>
 
     <header class="pt-32 pb-12 px-6 text-center relative z-10">
-        <h1 class="text-5xl md:text-6xl font-black tracking-tight mb-4">第二階段：<span class="gradient-text">免代購直儲</span></h1>
-        <p class="text-gray-400 text-lg">官方直購、免代購抽成、秒速發卡。新手也能輕鬆搞定。</p>
+        <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-4">第二階段：<span class="gradient-text">免代購直儲</span></h1>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">利用印度亞馬遜購買官方電子禮品卡，徹底擺脫代購的高額抽成與黑卡風險。購買後 15 分鐘內即可入帳。</p>
     </header>
 
     <main class="max-w-4xl mx-auto px-6 pb-20 relative z-10 space-y-8">
         
-        <div class="glass-card rounded-3xl p-8 md:p-10 w-full">
-            <h2 class="text-2xl font-bold mb-4 text-white"><i class="fa-solid fa-cart-shopping text-brand-cyan mr-2"></i> 登入 Amazon 並搜尋禮物卡</h2>
-            <ul class="space-y-4 text-gray-300">
-                <li>• 進入印度亞馬遜 <a href="https://www.amazon.in/" target="_blank" class="text-brand-blue hover:underline">amazon.in</a>。此步驟 <strong>不需開 VPN</strong>，若有美日亞馬遜帳號可直接登入。</li>
-                <li>
-                    • 在搜尋列貼上並搜尋官方數位版禮品卡：
-                    <button onclick="copyAmazonText()" id="btn-copy-amz" class="ml-2 bg-brand-blue/20 text-brand-cyan border border-brand-cyan/30 px-3 py-1 rounded-md text-sm hover:bg-brand-blue/40 transition">
-                        複製 "Apple Gift Card"
-                    </button>
+        <div class="glass-card rounded-3xl p-8 md:p-10 w-full relative">
+            <h2 class="text-2xl font-bold mb-6 text-white border-b border-white/10 pb-4"><i class="fa-solid fa-cart-shopping text-brand-cyan mr-3"></i> 登入 Amazon 並尋找商品</h2>
+            <ul class="space-y-5 text-gray-300">
+                <li class="flex gap-4 items-start">
+                    <div class="mt-1 w-6 h-6 rounded-full bg-brand-cyan/20 text-brand-cyan flex items-center justify-center text-xs shrink-0">1</div>
+                    <div>進入印度亞馬遜官網 <a href="https://www.amazon.in/" target="_blank" class="text-brand-blue hover:underline font-bold">amazon.in</a>。<strong>（不需開 VPN）</strong><br><span class="text-sm text-gray-500 mt-1 block">提示：Amazon 帳號全球通用，若有美亞、日亞帳號可直接登入，無須重新註冊。</span></div>
                 </li>
-                <li>• 選擇 <strong>E-mail Delivery</strong> 版本，輸入你要的面額 (INR) 並將收件人填寫你自己的 Email。</li>
+                <li class="flex gap-4 items-start">
+                    <div class="mt-1 w-6 h-6 rounded-full bg-brand-cyan/20 text-brand-cyan flex items-center justify-center text-xs shrink-0">2</div>
+                    <div class="w-full">
+                        在上方搜尋列搜尋官方數位版禮品卡：
+                        <div class="flex items-center gap-3 mt-3 bg-dark-800 p-2 rounded-lg border border-white/10 inline-flex">
+                            <code class="text-brand-cyan px-2 font-mono">Apple Gift Card</code>
+                            <button onclick="copySingle('Apple Gift Card', this)" class="bg-white/10 hover:bg-white/20 text-white text-xs px-3 py-1.5 rounded transition">
+                                <i class="fa-regular fa-copy"></i> 複製
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li class="flex gap-4 items-start">
+                    <div class="mt-1 w-6 h-6 rounded-full bg-brand-cyan/20 text-brand-cyan flex items-center justify-center text-xs shrink-0">3</div>
+                    <div>在搜尋結果中，務必選擇標示有 <strong>"E-mail Delivery"</strong> 的版本。進入商品頁後，輸入你要購買的面額（單位：INR 盧比），並將收件人 (To) 填寫為<strong>你自己的 Email 信箱</strong>。</div>
+                </li>
             </ul>
         </div>
 
         <div class="glass-card rounded-3xl p-8 md:p-10 w-full relative">
-            <h2 class="text-2xl font-bold mb-4 text-white"><i class="fa-regular fa-credit-card text-brand-purple mr-2"></i> 結帳：綁定信用卡與印度地址</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-white/5 border border-white/10 p-5 rounded-2xl">
-                    <h3 class="text-brand-cyan font-bold mb-2">信用卡提醒</h3>
-                    <p class="text-sm text-gray-400">可直接刷台灣發行的 Visa/Mastercard，建議使用海外回饋大於 1.5% 的神卡來折抵手續費。</p>
+            <h2 class="text-2xl font-bold mb-6 text-white border-b border-white/10 pb-4"><i class="fa-regular fa-credit-card text-brand-purple mr-3"></i> 結帳：信用卡與帳單地址</h2>
+            
+            <div class="mb-6 bg-brand-purple/10 border border-brand-purple/20 p-4 rounded-xl text-sm text-gray-300 leading-relaxed">
+                <strong class="text-brand-purple block mb-1">關於付款卡片：</strong>
+                你可以直接綁定並使用台灣發行的 Visa、Mastercard 或 JCB 信用卡結帳。這筆消費屬於海外交易，建議使用海外回饋大於 1.5% 的信用卡來折抵手續費。
+            </div>
+
+            <div class="bg-dark-800 border border-white/10 rounded-2xl overflow-hidden mt-6">
+                <div class="bg-dark-700/50 px-5 py-3 border-b border-white/10 flex justify-between items-center">
+                    <span class="text-sm font-bold text-white">Amazon 結帳地址填寫 (Billing Address)</span>
+                    <span class="text-xs text-gray-500">點擊右側按鈕單獨複製</span>
                 </div>
-                <div class="bg-white/5 border border-white/10 p-5 rounded-2xl relative">
-                    <h3 class="text-brand-cyan font-bold mb-2">帳單地址 (Billing Address)</h3>
-                    <button onclick="copyAmzAddress()" id="btn-amz-address" class="absolute top-4 right-4 text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-md transition-colors">複製地址</button>
-                    <div class="text-xs font-mono text-gray-400 mt-2">
-                        Pin code: 110011<br>Flat/House: Number One<br>Area/Street: Mansingh Road<br>City: New Delhi<br>State: Delhi
+                
+                <div class="divide-y divide-white/5">
+                    <div class="flex items-center justify-between p-4 hover:bg-white/5 transition">
+                        <div><div class="text-xs text-gray-500 mb-1">郵遞區號 (PIN code)</div><div class="font-mono text-white">110011</div></div>
+                        <button onclick="copySingle('110011', this)" class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg text-sm text-gray-300 transition flex items-center gap-2"><i class="fa-regular fa-copy"></i><span class="hidden sm:inline">複製</span></button>
+                    </div>
+                    
+                    <div class="flex items-center justify-between p-4 hover:bg-white/5 transition">
+                        <div><div class="text-xs text-gray-500 mb-1">門牌/號碼 (Flat/House no.)</div><div class="font-mono text-white">Number One</div></div>
+                        <button onclick="copySingle('Number One', this)" class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg text-sm text-gray-300 transition flex items-center gap-2"><i class="fa-regular fa-copy"></i><span class="hidden sm:inline">複製</span></button>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 hover:bg-white/5 transition">
+                        <div><div class="text-xs text-gray-500 mb-1">街道/區域 (Area/Street)</div><div class="font-mono text-white">Mansingh Road</div></div>
+                        <button onclick="copySingle('Mansingh Road', this)" class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg text-sm text-gray-300 transition flex items-center gap-2"><i class="fa-regular fa-copy"></i><span class="hidden sm:inline">複製</span></button>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 hover:bg-white/5 transition">
+                        <div><div class="text-xs text-gray-500 mb-1">城市/鎮 (Town/City)</div><div class="font-mono text-white">New Delhi</div></div>
+                        <button onclick="copySingle('New Delhi', this)" class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg text-sm text-gray-300 transition flex items-center gap-2"><i class="fa-regular fa-copy"></i><span class="hidden sm:inline">複製</span></button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="glass-card rounded-3xl p-8 md:p-10 w-full bg-gradient-to-r from-dark-900 to-brand-blue/10">
-            <h2 class="text-2xl font-bold mb-4 text-white"><i class="fa-solid fa-gamepad text-green-400 mr-2"></i> 最終步：收信與進遊戲兌換！</h2>
-            <ul class="space-y-4 text-gray-300">
-                <li>1. 結帳後等待 5~15 分鐘，信箱會收到 16 位數兌換碼 (Redemption Code)。</li>
-                <li>2. 打開 iPhone App Store，點大頭貼選「兌換禮物卡或代碼」，輸入 16 位數字儲值。</li>
-                <li>3. <strong>風控解鎖：</strong> 首次遊戲內購買若失敗，尋找 Apple 官網文字客服告知「儲值禮物卡無法消費」，客服解鎖後等 30 分鐘即可順暢課金。</li>
-            </ul>
+        <div class="glass-card rounded-3xl p-8 md:p-10 w-full bg-gradient-to-br from-dark-900 to-green-900/20 border-green-500/20">
+            <h2 class="text-2xl font-bold mb-6 text-white"><i class="fa-solid fa-gamepad text-green-400 mr-3"></i> 最終步：收信與進遊戲兌換！</h2>
+            <div class="space-y-6 text-gray-300">
+                <div class="bg-dark-900/50 p-4 rounded-xl border border-white/5">
+                    <h4 class="font-bold text-white mb-2">1. 收取兌換碼</h4>
+                    <p class="text-sm text-gray-400">結帳完成後，Amazon 系統約需 5~15 分鐘處理。之後你的信箱就會收到一封帶有「16 位數兌換碼 (Redemption Code)」的信件。</p>
+                </div>
+                <div class="bg-dark-900/50 p-4 rounded-xl border border-white/5">
+                    <h4 class="font-bold text-white mb-2">2. 儲值進 Apple 帳號</h4>
+                    <p class="text-sm text-gray-400">打開 iPhone 的 App Store，點擊右上角大頭貼，選擇<strong>「兌換禮物卡或代碼」</strong>，手動輸入該 16 位數字即可將餘額存入。</p>
+                </div>
+                <div class="bg-red-500/10 p-4 rounded-xl border border-red-500/20">
+                    <h4 class="font-bold text-red-400 mb-2"><i class="fa-solid fa-shield-halved mr-1"></i> 3. 觸發 Apple 風控防護（必看）</h4>
+                    <p class="text-sm text-gray-400">新帳號跨區消費時，首次進遊戲購買極高機率會跳出「您的購買無法完成」。請勿驚慌，這是防盜刷機制。<strong>解法：前往 Apple 官網尋找「線上文字客服」，告知「儲值禮物卡後無法在 App 內消費」，客服在後台解鎖後，等待 15~30 分鐘即可順暢課金。</strong></p>
+                </div>
+            </div>
         </div>
 
         <div class="text-center pt-8">
@@ -101,19 +147,17 @@
     </main>
 
     <script>
-        function copyAmazonText() {
-            navigator.clipboard.writeText('Apple Gift Card').then(() => {
-                const btn = document.getElementById('btn-copy-amz');
-                btn.innerHTML = '已複製！'; btn.classList.add('text-green-400', 'border-green-400');
-                setTimeout(() => { btn.innerHTML = '複製 "Apple Gift Card"'; btn.classList.remove('text-green-400', 'border-green-400'); }, 2000);
-            });
-        }
-        function copyAmzAddress() {
-            navigator.clipboard.writeText(`Pin code: 110011\nFlat/House: Number One\nArea/Street: Mansingh Road\nCity: New Delhi\nState: Delhi`).then(() => {
-                const btn = document.getElementById('btn-amz-address');
-                btn.innerHTML = '已複製！'; btn.classList.add('text-green-400');
-                setTimeout(() => { btn.innerHTML = '複製地址'; btn.classList.remove('text-green-400'); }, 2000);
-            });
+        function copySingle(text, btnElement) {
+            navigator.clipboard.writeText(text).then(() => {
+                const originalHtml = btnElement.innerHTML;
+                btnElement.innerHTML = '<i class="fa-solid fa-check text-green-400"></i> <span class="hidden sm:inline text-green-400">已複製</span>';
+                btnElement.classList.replace('bg-white/10', 'bg-green-500/20');
+                
+                setTimeout(() => {
+                    btnElement.innerHTML = originalHtml;
+                    btnElement.classList.replace('bg-green-500/20', 'bg-white/10');
+                }, 1500);
+            }).catch(err => alert('複製失敗，請手動選取'));
         }
     </script>
 </body>
